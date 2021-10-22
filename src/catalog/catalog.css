@@ -1,0 +1,10 @@
+.card-container {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+}
+
+.catalog-box {
+    max-width: fit-content;
+}

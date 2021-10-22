@@ -1,0 +1,21 @@
+.filter-box {
+    max-width: fit-content;
+    font-size: medium;
+    border: 2px solid;
+    border-radius: 10px;
+    border-color: rgb(175, 171, 175);
+    margin-right: 30px;
+}
+
+.filter-list {
+    list-style-type: none;
+}
+
+li {
+
+}
+
+h1 {
+    font-size: large;
+    padding: 10px;
+}
