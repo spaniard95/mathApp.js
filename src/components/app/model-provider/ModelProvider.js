@@ -1,7 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
-import filterReducer from '../../../models/filter/filterSlice';
-const ModelProvider = ({options, children}) => {
+import filterReducer from '../../../models/filterModel';
+
+const ModelProvider = ({children}) => {
     
     const store = configureStore({
         reducer: {
@@ -10,6 +11,6 @@ const ModelProvider = ({options, children}) => {
     });
 
     return <Provider store={store}>{children}</Provider>
-}
+};
 
 export default ModelProvider;
