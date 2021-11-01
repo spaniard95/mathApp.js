@@ -1,19 +1,8 @@
 import React, { useState } from 'react';
 import "./filter.css";
 
-const Filter = () => {
+const Filter = ({handleChange}) => {
 
-    const [checks, setChecks] = useState([false, false, false])
-    
-    function handleChange(event) {
-      setChecks(prevState => {
-                const arr = prevState;
-                arr[event.target.value] = !prevState[event.target.value];
-                console.log(arr);
-                return arr;
-            }
-        );
-    }
     return (
         <div class="filter-box">
            <h1>Κατηγορίες μαθημάτων</h1> 

@@ -2,9 +2,9 @@ import "./card.css"
 
 const Card = ({num, title, catalog, grade=-1}) => {
     return (
-        <div class="flex-card">
+        <li class="flex-card">
             <n id="num">{num}</n>
-            {grade!= -1 &&  
+            {grade!= null &&  
                 <div>
                     <b id="line"> </b>
                     <a id="grade">{grade}</a>
@@ -12,10 +12,9 @@ const Card = ({num, title, catalog, grade=-1}) => {
             }
             <div id="double">
                 <div>{title}</div>
-                <div>{catalog}</div>
-            </div>
-            
-        </div>
+              {catalog.map(cat => <c>{cat + " "}</c>)}
+            </div>        
+        </li>
     );
 };
 
