@@ -8,7 +8,10 @@ export const catalogSlice = createSlice({
     initialState,
     reducers: {
         gradeInput: (state, action) => {
-            state[0].grade = 8; 
+            const lesson = state.find(x => x.number == action.payload.num)
+            const lessonIndex = state.indexOf(lesson)
+            state[lessonIndex].grade = action.payload.grade; 
+            console.log(lessonIndex)
         },
     }, 
 });

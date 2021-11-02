@@ -7,7 +7,7 @@ const Card = ({num, title, catalog, grade=-1}) => {
     const grad = useSelector((state) => state.catalog);
 
     const handleGradeChange = (num, grade) => {  
-        dispatch(gradeInput(grade));
+        dispatch(gradeInput({num: num,grade: grade}));
     };
 
     return (
