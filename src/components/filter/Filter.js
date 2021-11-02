@@ -8,7 +8,7 @@ const Filter = () => {
     const count = useSelector((state) => state.filter.value);
 
     useEffect(() => {
-
+        console.log("useEffect called by " + count);
     }, [count])
     return (
         <div class="filter-box">
@@ -23,11 +23,11 @@ const Filter = () => {
                 <label for="c1">Υποχρεωτικά</label>
             </li>
             <li>
-                <input type="checkbox" name="c1" id="c1" value= {1} onChange={() => console.log("asdf")}></input>
+                <input type="checkbox" name="c1" id="c1" value= {1} onChange={(e) => dispatch(clicked(e.target.value))}></input>
                 <label for="c1">ΠΚΕΜ</label>
             </li>
             <li>
-                <input type="checkbox" name="c1" id="c1" value= {2} onChange={() => console.log("asdf")}></input>
+                <input type="checkbox" name="c1" id="c1" value= {2} onChange={(e) => dispatch(clicked(e.target.value))}></input>
                 <label for="c1">ΠΚΘΜ</label>
             </li>
            </ul>

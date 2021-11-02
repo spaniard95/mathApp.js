@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-//const initialFilterState = new Array(3).fill(false);
+//const initialState = new Array(3).fill(false);
 const initialState = {
     value: [false, false, false],
 }
