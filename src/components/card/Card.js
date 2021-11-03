@@ -1,13 +1,18 @@
 import "./card.css";
 import { useDispatch, useSelector } from 'react-redux';
-import { gradeInput } from "../../models/catalogModel";
+import { gradeInput, categoryChange } from "../../models/catalogModel";
+import SelectCateg from "./SelectCateg";
 
-const Card = ({num, title, catalog, grade=-1}) => {
+const Card = ({num, title, category, grade, selected}) => {
     const dispatch = useDispatch();
     const grad = useSelector((state) => state.catalog);
 
     const handleGradeChange = (num, grade) => {  
         dispatch(gradeInput({num: num,grade: grade}));
+    };
+
+    const handleCategoryChange = (num, categoryIndex) => {
+        dispatch(categoryChange({num: num, selected: categoryIndex}))
     };
 
     return (
@@ -27,7 +32,12 @@ const Card = ({num, title, catalog, grade=-1}) => {
             </input> 
             <div id="double">
                 <div>{title}</div>
-              {catalog.map(categ => <c>{categ + " "}</c>)}
+               <SelectCateg 
+                    num={num}
+                    category={category}
+                    selected={selected}
+                    handleCategoryChange={handleCategoryChange} 
+                />
             </div>        
         </li>
     );

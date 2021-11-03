@@ -10,6 +10,7 @@ const Filter = () => {
     useEffect(() => {
         console.log("useEffect called by " + count);
     }, [count])
+    
     return (
         <div class="filter-box">
            <h1>Κατηγορίες μαθημάτων</h1> 

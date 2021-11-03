@@ -2,7 +2,7 @@ import Card from "../card";
 import lessons from "./LessonCatalog";
 import "./catalog.css";
 
-const Catalog = ({checks}) => {
+const Catalog = () => {
     return (
         <div className="catalog-box">
             <div>
@@ -12,8 +12,14 @@ const Catalog = ({checks}) => {
                 <option value="Υποχρεωτικό">Αριθμός Καταλόγου</option>
             </select>
             <list class="card-container">
-                {lessons.map(lessons => 
-                    <Card num={lessons.number} title={lessons.name} catalog={lessons.category} grade ={lessons.grade}/>
+                {lessons.map(lesson => 
+                    <Card 
+                        num={lesson.number} 
+                        title={lesson.name} 
+                        category={lesson.category} 
+                        grade={lesson.grade}
+                        selected={lesson.selected}
+                    />
                 )}    
             </list>
         </div>

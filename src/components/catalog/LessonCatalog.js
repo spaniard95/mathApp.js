@@ -11,8 +11,10 @@ const lessons = [
         number: 109,
         name: "Θεμέλια Μαθηματικής Ανάλυσης",
         category: [
-            "ΚΘΜ"
+            "ΚΘΜ",
+            "TEST"
         ],
+        selected: 1,
         grade: null,
     },
     {
@@ -22,7 +24,8 @@ const lessons = [
             "ΚΘΜ",
             "TEST"
         ],
-        grade: 5,
+        selected: 0,
+        grade: null,
     },
     {
         number: 120,
