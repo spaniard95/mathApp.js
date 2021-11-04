@@ -1,8 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-//const initialState = new Array(3).fill(false);
+//const initialState = new Array(6).fill(false); doesnt work,I dont know why
 const initialState = {
-    value: [false, false, false, false, false, false],
+    value: [true, true, true, true, true, true],
 }
 
 export const filterSlice = createSlice({
@@ -12,9 +12,12 @@ export const filterSlice = createSlice({
         clicked: (state, action) => {
             state.value[action.payload] = !state.value[action.payload];
         },
+        checkAll: (state) => {
+            state.value.fill(true);
+        }
     }, 
 });
 
-export const {clicked} = filterSlice.actions;
+export const {clicked, checkAll} = filterSlice.actions;
 
 export default filterSlice.reducer;

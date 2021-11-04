@@ -1,6 +1,6 @@
 import filterReducer from "./filterSlice";
-import { clicked } from "./filterSlice";
+import { clicked, checkAll } from "./filterSlice";
 
-export {clicked};
+export {clicked, checkAll};
 
 export default filterReducer;

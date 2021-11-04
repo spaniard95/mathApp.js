@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { clicked } from '../../models/filterModel';
+import { clicked, checkAll } from '../../models/filterModel';
 import "./filter.css";
+
+const categoriesLi = ["Υποχρεωτικά (14)", "ΠΚΘΜ", "ΠΚΕΜ", "ΚΘΜ", "ΚΕΜ", "ΤΕΣΤ"]
 
 const Filter = () => {
     const dispatch = useDispatch();
@@ -16,33 +18,27 @@ const Filter = () => {
            <h1>Κατηγορίες μαθημάτων</h1> 
            <ul class="filter-list">
             {/* <li>
-                <input type="checkbox" name="c1" id="c1"></input>
+                <input 
+                    type="checkbox" 
+                    name="c1" 
+                    id="c1"
+                    onChange={(e) => dispatch(clicked(e.target.value))}>
+                </input>
                 <label for="c1">Επιλογή όλων</label>
             </li> */}
-            <li>
-                <input type="checkbox" name="c1" id="c1" value= {0} onChange={(e) => dispatch(clicked(e.target.value))}></input>
-                <label for="c1">Υποχρεωτικά</label>
-            </li>
-            <li>
-                <input type="checkbox" name="c1" id="c1" value= {1} onChange={(e) => dispatch(clicked(e.target.value))}></input>
-                <label for="c1">ΠΚΘΜ</label>
-            </li>
-            <li>
-                <input type="checkbox" name="c1" id="c1" value= {2} onChange={(e) => dispatch(clicked(e.target.value))}></input>
-                <label for="c1">ΠΚΕΜ</label>
-            </li>
-            <li>
-                <input type="checkbox" name="c1" id="c1" value= {3} onChange={(e) => dispatch(clicked(e.target.value))}></input>
-                <label for="c1">ΚΘΜ</label>
-            </li>
-            <li>
-                <input type="checkbox" name="c1" id="c1" value= {4} onChange={(e) => dispatch(clicked(e.target.value))}></input>
-                <label for="c1">ΚΕΜ</label>
-            </li>
-            <li>
-                <input type="checkbox" name="c1" id="c1" value= {5} onChange={(e) => dispatch(clicked(e.target.value))}></input>
-                <label for="c1">test</label>
-            </li>
+            {categoriesLi.map((category,index) => 
+                 <li>
+                    <input 
+                        type="checkbox" 
+                        name="c1" 
+                        id="c1" 
+                        value= {index} 
+                        onChange={(e) => dispatch(clicked(e.target.value))} 
+                        checked={count[index]}>
+                    </input>
+                    <label for="c1">{category}</label>
+                 </li>
+            )}
            </ul>
         </div>
         

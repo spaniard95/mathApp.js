@@ -8,14 +8,14 @@ const lessons = [
     {
         number: 109,
         name: "Θεμέλια Μαθηματικής Ανάλυσης",
-        category: [3, 5],  //test=6
+        category: [3, 5],  //test=5
         selected: 1,
         grade: null,
     },
     {
         number: 110,
         name: "Θεμέλια των Μαθηματικών",
-        category: [3, 5], //test=6
+        category: [3, 5], //test=5
         selected: 0,
         grade: null,
     },
