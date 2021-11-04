@@ -25,11 +25,23 @@ const Filter = () => {
             </li>
             <li>
                 <input type="checkbox" name="c1" id="c1" value= {1} onChange={(e) => dispatch(clicked(e.target.value))}></input>
-                <label for="c1">ΠΚΕΜ</label>
+                <label for="c1">ΠΚΘΜ</label>
             </li>
             <li>
                 <input type="checkbox" name="c1" id="c1" value= {2} onChange={(e) => dispatch(clicked(e.target.value))}></input>
-                <label for="c1">ΠΚΘΜ</label>
+                <label for="c1">ΠΚΕΜ</label>
+            </li>
+            <li>
+                <input type="checkbox" name="c1" id="c1" value= {3} onChange={(e) => dispatch(clicked(e.target.value))}></input>
+                <label for="c1">ΚΘΜ</label>
+            </li>
+            <li>
+                <input type="checkbox" name="c1" id="c1" value= {4} onChange={(e) => dispatch(clicked(e.target.value))}></input>
+                <label for="c1">ΚΕΜ</label>
+            </li>
+            <li>
+                <input type="checkbox" name="c1" id="c1" value= {5} onChange={(e) => dispatch(clicked(e.target.value))}></input>
+                <label for="c1">test</label>
             </li>
            </ul>
         </div>

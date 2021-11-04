@@ -2,61 +2,45 @@ const lessons = [
     {
         number: 101,
         name: "Απειροστικος Λογιμος 1",
-        category: [
-            "Υποχρεωτικό"
-        ],
+        category: [0],
         grade: null,
     },
     {
         number: 109,
         name: "Θεμέλια Μαθηματικής Ανάλυσης",
-        category: [
-            "ΚΘΜ",
-            "TEST"
-        ],
+        category: [3, 5],  //test=6
         selected: 1,
         grade: null,
     },
     {
         number: 110,
         name: "Θεμέλια των Μαθηματικών",
-        category: [
-            "ΚΘΜ",
-            "TEST"
-        ],
+        category: [3, 5], //test=6
         selected: 0,
         grade: null,
     },
     {
         number: 120,
         name: "Θεμέλια Άλγεβρας και Γεωμετρίας",
-        category: [
-            "ΚΘΜ"
-        ],
+        category: [3],
         grade: null,
     },
     {
         number: 121,
         name: "Γραμμική Άλγεβρα I",
-        category: [
-            "Υποχρεωτικό"
-        ],
+        category: [0],
         grade: null,
     },
     {
         number: 122,
         name: "Γεωμετρία I",
-        category: [
-            "Υποχρεωτικό"
-        ],
+        category: [0],
         grade: null,
     },
     {
         number: 141,
         name: "Πληροφορική I",
-        category: [
-            "Υποχρεωτικό"
-        ],
+        category: [0],
         grade: null,
     },
 ];

@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 //const initialState = new Array(3).fill(false);
 const initialState = {
-    value: [false, false, false],
+    value: [false, false, false, false, false, false],
 }
 
 export const filterSlice = createSlice({

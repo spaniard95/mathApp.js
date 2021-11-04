@@ -1,6 +1,8 @@
 import { useState } from "react";
-import { Provider } from "react-redux";
+import lessons from "../catalog/LessonCatalog";
 import "./selectCateg.css"; 
+
+const lessonsNums = ["Υποχρεωτικό", "ΠΚΕΜ", "ΠΚΘΜ", "ΚΘΜ", "ΚΕΜ", "TEST"]
 
 const SelectCateg = ({num, category, selected, handleCategoryChange}) => {
     const [select, setSelect] = useState(selected);
@@ -14,15 +16,15 @@ const SelectCateg = ({num, category, selected, handleCategoryChange}) => {
     return (
         <c>
             {category.length == 1 ?
-                category[0]             //for not double-category lessons
+                lessonsNums[category[0]]             //for not double-category lessons
                 :
                 category.map((categ, index) => {
                     return index === select ? 
                         <button 
-                            class="selected" 
-                            onClick={e => handleChange(num, index)}>{categ}</button>
+                            class={`selected-${categ}`}
+                            onClick={e => handleChange(num, index)}>{lessonsNums[categ]}</button>
                         :
-                        <button onClick={e => handleChange(num, index)}>{categ}</button>;
+                        <button onClick={e => handleChange(num, index)}>{lessonsNums[categ]}</button>;
                 })
             }
         </c>
