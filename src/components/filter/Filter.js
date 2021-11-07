@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { clicked, checkAll } from '../../models/filterModel';
 import "./filter.css";
 
-const categoriesLi = ["Υποχρεωτικά (14)", "ΠΚΘΜ", "ΠΚΕΜ", "ΚΘΜ", "ΚΕΜ", "ΤΕΣΤ"]
+const categoriesLi = ["Υποχρεωτικά (14)", "ΠΚΘΜ", "ΠΚΕΜ", "ΚΘΜ", "ΚΕΜ", "ΤΕΣΤ"];
 
 const Filter = () => {
     const dispatch = useDispatch();
@@ -22,7 +22,7 @@ const Filter = () => {
                     type="checkbox" 
                     name="c1" 
                     id="c1"
-                    onChange={(e) => dispatch(clicked(e.target.value))}>
+                    onChange={(e) => dispatch(checkAll(e.target.value))}>
                 </input>
                 <label for="c1">Επιλογή όλων</label>
             </li> */}

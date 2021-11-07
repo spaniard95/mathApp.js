@@ -1,0 +1,31 @@
+.results-matrix {
+  margin-left: 30px;
+}
+
+table {
+    /* display: grid;
+    grid-gap: 5px 5px 5px; */
+    /* grid-template-columns: auto auto auto; */
+    background-color: #95bad8;
+    padding: 10px;
+    /* font-family: arial, sans-serif; */
+    border-collapse: collapse;
+    width: 350px;
+    height:fit-content;
+    border: 2px solid;
+    border-color: rgb(175, 171, 175);
+  }
+  
+  tr, td {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 30px;
+    text-align: center;
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  td:hover {
+    background-color: aqua;
+  }

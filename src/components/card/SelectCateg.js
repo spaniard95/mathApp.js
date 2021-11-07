@@ -1,16 +1,11 @@
-import { useState } from "react";
-import lessons from "../catalog/LessonCatalog";
 import "./selectCateg.css"; 
 
 const lessonsNums = ["Υποχρεωτικό", "ΠΚΕΜ", "ΠΚΘΜ", "ΚΘΜ", "ΚΕΜ", "TEST"]
 
 const SelectCateg = ({num, category, selected, handleCategoryChange}) => {
-    const [select, setSelect] = useState(selected);
 
-    //bad idea but works
     const handleChange = (num, index) => {
         handleCategoryChange(num, index);
-        setSelect(index);
     };
 
     return (
@@ -19,7 +14,7 @@ const SelectCateg = ({num, category, selected, handleCategoryChange}) => {
                 lessonsNums[category[0]]             //for not double-category lessons
                 :
                 category.map((categ, index) => {
-                    return index === select ? 
+                    return index === selected ? 
                         <button 
                             class={`selected-${categ}`}
                             onClick={e => handleChange(num, index)}>{lessonsNums[categ]}</button>

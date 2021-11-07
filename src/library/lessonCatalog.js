@@ -3,7 +3,7 @@ const lessons = [
         number: 101,
         name: "Απειροστικος Λογιμος 1",
         category: [0],
-        grade: null,
+        grade: "",
     },
     {
         number: 109,

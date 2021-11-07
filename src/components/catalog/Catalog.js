@@ -1,5 +1,4 @@
 import Card from "../card";
-import lessons from "./LessonCatalog";
 import "./catalog.css";
 import { useSelector } from "react-redux";
 

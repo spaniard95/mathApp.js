@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import lessons from "../../components/catalog/LessonCatalog";
+import { lessons } from "../../library";
 
 const initialState = lessons;
 
