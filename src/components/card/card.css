@@ -47,9 +47,9 @@
     border-color: red;
 }
 
-/* #grade::before {
+#grade::before {
     content: "Βαθμός: ";
-} */
+}
 
 #line {
     float: right;

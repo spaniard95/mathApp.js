@@ -3,13 +3,10 @@ import { groupByCategory } from "../../library";
 import { useSelector } from "react-redux";
 import { majors, categoriesLi } from "../../library";
 
-
-
 //chaos
 const Matrix = () => {
   const catalog = useSelector((state) => state.catalog);
   const group = groupByCategory(catalog);
-  console.log(group)
 
   //99% of the chaos
   const loadPassedLessons = () => {
@@ -18,13 +15,13 @@ const Matrix = () => {
       arr1.push(
       <tr>
         <td>{categoriesLi[i]}</td>    
-        {group[i] ?  
+        {group[i] ?                              //builds passed lesson columns               
           <td>{group[i].filter(lesson => 
             Number(lesson.grade) >= 5).length}
           </td> 
           : 
           <td>0</td>}
-        {majors.map(major =>
+        {majors.map(major =>                  //builds table major-part columns
           <td>{major.requirements[i]}</td>
         )
         }

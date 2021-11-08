@@ -17,7 +17,7 @@ const Card = ({num, title, category, grade, selected}) => {
     };
 
     return (
-        <li class="flex-card">
+        <li1 class="flex-card">
             <n id="num">{num}</n>
             {/* {grade!= null &&  
                 <div>
@@ -40,7 +40,7 @@ const Card = ({num, title, category, grade, selected}) => {
                     handleCategoryChange={handleCategoryChange} 
                 />
             </div>        
-        </li>
+        </li1>
     );
 };
 

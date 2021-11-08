@@ -12,12 +12,30 @@
     list-style-type: none;
 }
 
+.filter-list:hover {
+    
+}
+
 li {
- 
+ color: rgb(10, 12, 12);
+ padding: 1px;
+}
+
+.filter-list > li:hover {
+    color: rgb(126, 194, 194);
+    cursor: pointer;
+}
+
+label:hover {
+    cursor: pointer;
+}
+li > input:hover {
+    cursor: pointer;
 }
 
 h1 {
     font-size: large;
     padding: 10px;
 }
+
 

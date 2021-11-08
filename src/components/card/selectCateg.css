@@ -11,3 +11,7 @@
     color: rgb(97, 97, 100);
     font-size:medium;
 }
+
+c > button {
+    cursor: pointer;
+}

@@ -28,8 +28,8 @@ table {
     padding: 8px;
   }
   
-  td:hover {
-    background-color: rgb(151, 182, 182);
+  tr:hover {
+    background-color: rgb(204, 230, 230);
   }
 
   th {

@@ -28,15 +28,13 @@ const Filter = () => {
                 <label for="c1">Επιλογή όλων</label>
             </li> */}
             {categoriesLi.map((category,index) => 
-                 <li>
+                 <li onClick={() => dispatch(clicked(index))}>
                     <input 
                         type="checkbox" 
                         name="c1" 
-                        id={`categ`} 
-                        value= {index} 
-                        onChange={(e) => dispatch(clicked(e.target.value))} 
+                        value= {index}  
+                        // onChange={(e) => dispatch(clicked(e.target.value))} 
                         checked={count[index]}
-                        // style={"colour:red"}
                         >
                     </input>
                     <label for="c1">{category}</label>
