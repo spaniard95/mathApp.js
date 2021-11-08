@@ -1,5 +1,7 @@
 .results-matrix {
+  display: table-cell;
   margin-left: 30px;
+  width: auto;
 }
 
 table {
@@ -16,10 +18,10 @@ table {
     border-color: rgb(175, 171, 175);
   }
   
-  tr, td {
+  tr{
     background-color: rgba(255, 255, 255, 0.8);
     border: 1px solid rgba(0, 0, 0, 0.8);
-    padding: 30px;
+    padding: 300px;
     text-align: center;
     border: 1px solid #dddddd;
     text-align: left;
@@ -28,4 +30,14 @@ table {
   
   td:hover {
     background-color: rgb(151, 182, 182);
+  }
+
+  th {
+    text-align: center;
+    padding-right: 5px
+  }
+  
+  td {
+    text-align: center;
+    padding: 10px;
   }

@@ -1,7 +1,9 @@
 import groupByCategory from "./customGroupBy";
-import lessons from "./lessonCatalog";
+import {lessons, majors, categoriesLi} from "./lessonsCatalog";
 
 export {
     groupByCategory,
     lessons,
+    majors,
+    categoriesLi
 };

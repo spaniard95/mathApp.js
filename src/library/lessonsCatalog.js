@@ -45,4 +45,25 @@ const lessons = [
     },
 ];
 
-export default lessons;
+const majors = [
+    {
+        title: "Θεωρητικών Μαθηματικών",
+        requirements: [14, 6, 5, 8, 4, 2, , ]
+    },
+    {
+        title: "Εφαρμοσμένων Μαθηματικών",
+        requirements: [14, 6, 5, 8, 4, 2, , ]
+    },
+    {
+        title: "Θεωρητικών και Εφαρμοσμένων",
+        requirements: [14, 6, 5, 8, 4, 2, , ]
+    },
+
+];
+
+const categoriesLi = ["ΥΠ", "ΠΚΘΜ", "ΠΚΕΜ", "ΚΘΜ", "ΚΕΜ", "ΔΔΜ", "ΔΦ", "ΔΟΕ"];
+
+// const getNumOfLessonsPassed = (group) => {
+//     categoriesLi.reduce()
+// }
+export  {lessons, majors, categoriesLi};

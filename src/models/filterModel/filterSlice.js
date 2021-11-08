@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 //const initialState = new Array(6).fill(false); doesnt work,I dont know why
 const initialState = {
-    value: [true, true, true, true, true, true],
+    value: [true, true, true, true, true, true, true, true],
 }
 
 export const filterSlice = createSlice({

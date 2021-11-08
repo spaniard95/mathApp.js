@@ -6,3 +6,8 @@
 .selected-5 {
     background-color: rgb(226, 158, 141);
 }
+
+#categ {
+    color: rgb(97, 97, 100);
+    font-size:medium;
+}

@@ -3,7 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { clicked, checkAll } from '../../models/filterModel';
 import "./filter.css";
 
-const categoriesLi = ["Υποχρεωτικά (14)", "ΠΚΘΜ", "ΠΚΕΜ", "ΚΘΜ", "ΚΕΜ", "ΤΕΣΤ"];
+
+const categoriesLi = ["Υποχρεωτικά (14)", "ΠΚΘΜ", "ΠΚΕΜ", "ΚΘΜ", "ΚΕΜ", "ΔΔΜ", "ΔΦ", "ΔΟΕ"];
 
 const Filter = () => {
     const dispatch = useDispatch();
@@ -31,10 +32,12 @@ const Filter = () => {
                     <input 
                         type="checkbox" 
                         name="c1" 
-                        id="c1" 
+                        id={`categ`} 
                         value= {index} 
                         onChange={(e) => dispatch(clicked(e.target.value))} 
-                        checked={count[index]}>
+                        checked={count[index]}
+                        // style={"colour:red"}
+                        >
                     </input>
                     <label for="c1">{category}</label>
                  </li>

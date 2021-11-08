@@ -1,6 +1,6 @@
 import "./selectCateg.css"; 
 
-const lessonsNums = ["Υποχρεωτικό", "ΠΚΕΜ", "ΠΚΘΜ", "ΚΘΜ", "ΚΕΜ", "TEST"]
+const lessonsNums = ["Υποχρεωτικό", "ΠΚΕΜ", "ΠΚΘΜ", "ΚΘΜ", "ΚΕΜ", "ΔΔΜ", "ΔΦ", "ΔΟΕ"]
 
 const SelectCateg = ({num, category, selected, handleCategoryChange}) => {
 
@@ -11,13 +11,14 @@ const SelectCateg = ({num, category, selected, handleCategoryChange}) => {
     return (
         <c>
             {category.length == 1 ?
-                lessonsNums[category[0]]             //for not double-category lessons
+                <a id="categ">{lessonsNums[category[0]] }</a>           // not double-category lessons
                 :
                 category.map((categ, index) => {
                     return index === selected ? 
                         <button 
                             class={`selected-${categ}`}
-                            onClick={e => handleChange(num, index)}>{lessonsNums[categ]}</button>
+                            onClick={e => handleChange(num, index)}>{lessonsNums[categ]}
+                        </button>
                         :
                         <button onClick={e => handleChange(num, index)}>{lessonsNums[categ]}</button>;
                 })

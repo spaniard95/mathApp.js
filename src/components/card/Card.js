@@ -32,7 +32,7 @@ const Card = ({num, title, category, grade, selected}) => {
                 onChange={e => handleGradeChange(num, e.target.value)}>
             </input> 
             <div id="double">
-                <div>{title}</div>
+                <div id="title">{title}</div>
                <SelectCateg 
                     num={num}
                     category={category}
