@@ -8,7 +8,7 @@ const Card = ({num, title, category, grade, selected}) => {
     const grad = useSelector((state) => state.catalog);
 
     const handleGradeChange = (num, grade) => {  
-        if(grade<=10 && grade>=5 || grade==="") dispatch(gradeInput({num: num,grade: grade})); //if grade acceptable update catalog
+        if(grade<=10 && grade>=0|| grade==="") dispatch(gradeInput({num: num,grade: grade})); //if grade acceptable update catalog
 
     };
 

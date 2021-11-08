@@ -8,12 +8,12 @@ export const catalogSlice = createSlice({
     initialState,
     reducers: {
         gradeInput: (state, action) => {
-            const lesson = state.find(x => x.number == action.payload.num)
-            const lessonIndex = state.indexOf(lesson)
+            const lesson = state.find(x => x.number == action.payload.num);
+            const lessonIndex = state.indexOf(lesson);
             state[lessonIndex].grade = action.payload.grade; 
         },
         categoryChange: (state, action) => {
-            const lesson = state.find(x => x.number == action.payload.num)
+            const lesson = state.find(x => x.number == action.payload.num);
             const lessonIndex = state.indexOf(lesson);
             state[lessonIndex].selected = action.payload.selected;
         },

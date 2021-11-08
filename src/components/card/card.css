@@ -6,6 +6,7 @@
     max-width: 800px;
     text-align:left;
     max-height: 50px;
+    font-family: arial, sans-serif;
    
     border: 2px solid;
     border-radius: 10px;
@@ -36,11 +37,14 @@
     max-width: 75px;
     text-align: center;
 
-
     border: 1px solid;
     border-radius: 3px;
     border-color: rgb(21, 158, 55);
     
+}
+
+#grade:invalid {
+    border-color: red;
 }
 
 /* #grade::before {

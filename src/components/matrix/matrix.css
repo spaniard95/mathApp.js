@@ -10,7 +10,7 @@ table {
     padding: 10px;
     /* font-family: arial, sans-serif; */
     border-collapse: collapse;
-    width: 350px;
+    max-width: 100px;
     height:fit-content;
     border: 2px solid;
     border-color: rgb(175, 171, 175);
@@ -27,5 +27,5 @@ table {
   }
   
   td:hover {
-    background-color: aqua;
+    background-color: rgb(151, 182, 182);
   }
