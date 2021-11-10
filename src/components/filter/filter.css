@@ -22,7 +22,7 @@ li {
 }
 
 .filter-list > li:hover {
-    color: rgb(126, 194, 194);
+    color: rgb(106, 165, 165);
     cursor: pointer;
 }
 

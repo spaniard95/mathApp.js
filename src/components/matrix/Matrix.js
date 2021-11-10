@@ -21,8 +21,8 @@ const Matrix = () => {
           </td> 
           : 
           <td>0</td>}
-        {majors.map(major =>                  //builds table major-part columns
-          <td>{major.requirements[i]}</td>
+        {majors.map(major =>                  //builds table major limits-part columns
+          <td> ≥ {major.requirements[i]}</td>
         )
         }
         <td></td>

@@ -58,12 +58,53 @@ const majors = [
         title: "Θεωρητικών και Εφαρμοσμένων",
         requirements: [14, 6, 5, 8, 4, 2, , ]
     },
+];
 
+//not used
+const categories = [ 
+    {
+        title: "ΥΠ",
+        numPassed: 0,
+        majorRequirements: [14, 14, 14],
+    }, 
+    {
+        title: "ΠΚΘΜ",
+        numPassed: 0,
+        majorRequirements: [6, 6, 6],
+    },
+    {
+        title: "ΠΚΕΜ",
+        numPassed: 0,
+        majorRequirements: [5, 5, 6],
+    }, 
+    {
+        title: "ΚΘΜ",
+        numPassed: 0,
+        majorRequirements: [6, 6, 6],
+    }, 
+    {
+        title: "ΚΕΜ",
+        numPassed: 0,
+        majorRequirements: [6, 6, 6],
+    }, 
+    {
+        title: "ΔΔΜ",
+        numPassed: 0,
+        majorRequirements: [6, 6, 6],
+    }, 
+    {
+        title: "ΔΦ",
+        numPassed: 0,
+        majorRequirements: [2, 2, 2],
+    },
+    {
+        title: "ΔΟΕ",
+        numPassed: 0,
+        majorRequirements: [0, 0, 0],
+    }
 ];
 
 const categoriesLi = ["ΥΠ", "ΠΚΘΜ", "ΠΚΕΜ", "ΚΘΜ", "ΚΕΜ", "ΔΔΜ", "ΔΦ", "ΔΟΕ"];
 
-// const getNumOfLessonsPassed = (group) => {
-//     categoriesLi.reduce()
-// }
+
 export  {lessons, majors, categoriesLi};
