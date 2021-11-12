@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import reactDom from 'react-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { clicked, checkAll } from '../../models/filterModel';
 import "./filter.css";
@@ -35,6 +36,7 @@ const Filter = () => {
                         value= {index}  
                         // onChange={(e) => dispatch(clicked(e.target.value))} 
                         checked={count[index]}
+                        style={{color: "red"}}
                         >
                     </input>
                     <label for="c1">{category}</label>

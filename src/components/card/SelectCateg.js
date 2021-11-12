@@ -2,11 +2,7 @@ import "./selectCateg.css";
 
 const lessonsNums = ["Υποχρεωτικό", "ΠΚΕΜ", "ΠΚΘΜ", "ΚΘΜ", "ΚΕΜ", "ΔΔΜ", "ΔΦ", "ΔΟΕ"]
 
-const SelectCateg = ({num, category, selected, handleCategoryChange}) => {
-
-    const handleChange = (num, index) => {
-        handleCategoryChange(num, index);
-    };
+const SelectCateg = ({num, category, selected, setCategoryChange}) => {
 
     return (
         <c>
@@ -17,10 +13,10 @@ const SelectCateg = ({num, category, selected, handleCategoryChange}) => {
                     return index === selected ? 
                         <button 
                             class={`selected-${categ}`}
-                            onClick={e => handleChange(num, index)}>{lessonsNums[categ]}
+                            onClick={e => setCategoryChange(num, index)}>{lessonsNums[categ]}
                         </button>
                         :
-                        <button onClick={e => handleChange(num, index)}>{lessonsNums[categ]}</button>;
+                        <button onClick={e => setCategoryChange(num, index)}>{lessonsNums[categ]}</button>;
                 })
             }
         </c>
