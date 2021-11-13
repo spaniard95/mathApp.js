@@ -1,6 +1,9 @@
 import filterReducer from "./filterSlice";
 import { clicked, checkAll } from "./filterSlice";
+import useFilterModel from "./useFilterModel.js";
 
-export {clicked, checkAll};
+export {useFilterModel};
+
+
 
 export default filterReducer;

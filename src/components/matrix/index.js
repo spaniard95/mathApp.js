@@ -1,3 +1,3 @@
-import Matrix from "./Matrix";
+import BasicTable from "./Table2";
 
-export default Matrix;
+export default BasicTable;

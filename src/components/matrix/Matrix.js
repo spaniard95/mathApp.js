@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import { majors, categoriesLi } from "../../library";
 
 //chaos
-const Matrix = () => {
+const MatrixOld = () => {
   const catalog = useSelector((state) => state.catalog);
   const group = groupByCategory(catalog);
 

@@ -1,19 +1,13 @@
 import React, { useEffect } from 'react';
 import reactDom from 'react-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { clicked, checkAll } from '../../models/filterModel';
+import useFilterModel from '../../models/filterModel/useFilterModel';
 import "./filter.css";
 
 
 const categoriesLi = ["Υποχρεωτικά (14)", "ΠΚΘΜ", "ΠΚΕΜ", "ΚΘΜ", "ΚΕΜ", "ΔΔΜ", "ΔΦ", "ΔΟΕ"];
 
 const Filter = () => {
-    const dispatch = useDispatch();
-    const count = useSelector((state) => state.filter.value);
-
-    useEffect(() => {
-        console.log("useEffect called by " + count);
-    }, [count])
+    const {clickCheck, checkAll, checks} = useFilterModel();
     
     return (
         <div class="filter-box">
@@ -24,18 +18,18 @@ const Filter = () => {
                     type="checkbox" 
                     name="c1" 
                     id="c1"
-                    onChange={(e) => dispatch(checkAll(e.target.value))}>
+                    onChange={(e) => checkAll(e.target.value)}>
                 </input>
                 <label for="c1">Επιλογή όλων</label>
             </li> */}
             {categoriesLi.map((category,index) => 
-                 <li onClick={() => dispatch(clicked(index))}>
+                 <li onClick={() => clickCheck(index)}>
                     <input 
                         type="checkbox" 
                         name="c1" 
                         value= {index}  
-                        // onChange={(e) => dispatch(clicked(e.target.value))} 
-                        checked={count[index]}
+                        // onChange={(e) => dispatch(clickCheck(e.target.value))} 
+                        checked={checks[index]}
                         style={{color: "red"}}
                         >
                     </input>

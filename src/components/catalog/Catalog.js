@@ -1,31 +1,26 @@
 import Card from "../card";
 import "./catalog.css";
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
+import { useFilterModel } from "../../models/filterModel";
+import useCatalogModel from "../../models/catalogModel/useCatalogModel";
+import { getLessonsBy } from "../../library";
 
 const Catalog = () => {
-    const lessons = useSelector((state) => state.catalog);
-    const filterChecks = useSelector((state) => state.filter.value);
+    const { checks, checkedCategs } = useFilterModel();
+    const { lessons } = useCatalogModel();
+    const { getLessonsByCateg } = getLessonsBy;
 
-    //have to find smarter way
-    const filteredLessons = () => { 
-        return lessons.filter(lesson => {
-            for (let i=0; i<=6; i++) {
-                if (filterChecks[i] && lesson.category.includes(i)) return true;   //if lesson is of the category and category is clicked in filter
-            }
-            return false;
-        })
-    };
-
+    const filteredLessons = getLessonsByCateg(lessons, checkedCategs(checks));
     return (
         <div className="catalog-box">
             <div>
-                <h1>{`Κατάλογος μαθημάτων (${filteredLessons().length})`} </h1>
+                <h1>{`Κατάλογος μαθημάτων (${filteredLessons.length})`} </h1>
             </div>
             <select id="select1">
                 <option value="Υποχρεωτικό">Αριθμός Καταλόγου</option>
             </select>
             <list class="card-container">
-                {filteredLessons().map(lesson => 
+                {filteredLessons.map(lesson => 
                     <Card 
                         num={lesson.number} 
                         title={lesson.name} 
