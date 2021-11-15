@@ -1,5 +1,6 @@
 import "./card.css";
 import SelectCateg from "./SelectCateg";
+import { Typography } from "@mui/material";
 import useCatalogModel from "../../models/catalogModel/useCatalogModel";
 
 
@@ -22,7 +23,9 @@ const Card = ({num, title, category, grade, selected}) => {
                 onChange={e => setGrade(num, e.target.value)}>
             </input> 
             <div id="double">
-                <div id="title">{title}</div>
+            <Typography variant="h7" component="div">
+                {title}
+             </Typography>
                     <SelectCateg 
                         num={num}
                         category={category}

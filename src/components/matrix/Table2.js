@@ -6,49 +6,79 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import { Typography } from '@mui/material';
+import { majors, categoriesLi } from "../../library";
+import { getLessonsBy } from '../../library';
+import useCatalogModel from '../../models/catalogModel/useCatalogModel';
+import "./matrix.css";
 
-function createData(name, calories, fat, carbs, protein) {
-  return { name, calories, fat, carbs, protein };
+function createData(categoryTitle, passed, limit1, limit2, limit3) {
+  return { categoryTitle, passed, limit1, limit2, limit3};
 }
 
-const rows = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
-];
+const rows = ( lessons1 ) => {
+  const { getPassedLessonsByCateg } = getLessonsBy;  
+  
+  return categoriesLi.map((categoryRow, index) => {
+    console.log(getPassedLessonsByCateg(lessons1, 0))
+    return createData(
+      categoryRow,
+      getPassedLessonsByCateg(lessons1, index).length,
+      majors[0].requirements[index],
+      majors[1].requirements[index],
+      majors[2].requirements[index],
+    )
+  });
+};
 
 export default function BasicTable() {
+  const { lessons } = useCatalogModel();
+  
   return (
-    <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 650, maxWidth:450 }} aria-label="simple table">
-        <TableHead>
-          <TableRow>
-            <TableCell>Dessert (100g serving)</TableCell>
-            <TableCell align="right">Calories</TableCell>
-            <TableCell align="right">Fat&nbsp;(g)</TableCell>
-            <TableCell align="right">Carbs&nbsp;(g)</TableCell>
-            <TableCell align="right">Protein&nbsp;(g)</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {rows.map((row) => (
-            <TableRow
-              key={row.name}
-              sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-            >
-              <TableCell component="th" scope="row">
-                {row.name}
-              </TableCell>
-              <TableCell align="right">{row.calories}</TableCell>
-              <TableCell align="right">{row.fat}</TableCell>
-              <TableCell align="right">{row.carbs}</TableCell>
-              <TableCell align="right">{row.protein}</TableCell>
+    <div class="results-matrix1">
+     <Typography variant="h6" gutterBottom component="div">
+        Πίνακας Αποτελέσματων
+      </Typography>
+      <TableContainer component={Paper}>
+        <Table sx={{ minWidth: 500, padding: "none"}} size="small" aria-label="a dense table">
+          <TableHead height="10">
+            <TableRow>
+              <TableCell></TableCell>
+              <TableCell></TableCell>
+              <TableCell></TableCell>
+              <TableCell padding={"none"} align="center">Κατευθύνσεις</TableCell>
+              <TableCell></TableCell>
             </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
+            <TableRow >
+              <TableCell padding={"1"}  align="center">Κατηγορίες Μαθημάτων</TableCell>
+              <TableCell align="center">Επιτυχίες</TableCell>
+              <TableCell align="center">Θεωρητικών Μαθηματικών</TableCell>
+              <TableCell align="center" padding={"none"}>Εφαρμοσμένων Μαθηματικών</TableCell>
+              <TableCell align="center">Θεωρητικών και Εφαρμοσμένων</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {rows(lessons).map((row) => (
+              <TableRow
+                key={row.name}
+                sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+              >
+                <TableCell 
+                  component="th" 
+                  scope="row" 
+                  align="center"
+                >
+                  {row.categoryTitle}
+                </TableCell>
+                <TableCell align="center">{row.passed}</TableCell>
+                <TableCell align="center">{row.limit1}</TableCell>
+                <TableCell align="center">{row.limit2}</TableCell>
+                <TableCell align="center">{row.limit3}</TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
+    </div>
   );
 }

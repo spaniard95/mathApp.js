@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import reactDom from 'react-dom';
+import { Checkbox, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Typography } from '@mui/material';
 import useFilterModel from '../../models/filterModel/useFilterModel';
 import "./filter.css";
 
@@ -8,10 +8,39 @@ const categoriesLi = ["Υποχρεωτικά (14)", "ΠΚΘΜ", "ΠΚΕΜ", "Κ
 
 const Filter = () => {
     const {clickCheck, checkAll, checks} = useFilterModel();
+
+    // return (
+    //     <List sx={{ width: '25%', maxWidth: 250, height: 300}}>
+    //         {checks.map((category, index) => {
+    //             const labelId = `checkbox-list-label-${index}`;
+
+    //             return (
+    //                 <ListItem
+    //                     key={index}
+    //                     disablePadding
+    //                 >
+    //                     <ListItemButton role={undefined} onClick={() => clickCheck(index)} dense>
+    //                         <ListItemIcon>
+    //                             <Checkbox
+    //                                 edge="start"
+    //                                 checked={category}
+    //                                 tabIndex={-1}
+    //                                 disableRipple
+    //                             />
+    //                         </ListItemIcon>
+    //                         <ListItemText id={labelId} primary={categoriesLi[index]} />
+    //                     </ListItemButton> 
+    //                 </ListItem>
+    //             );
+    //         })}
+    //     </List>
+    // );
     
     return (
         <div class="filter-box">
-           <h1>Κατηγορίες μαθημάτων</h1> 
+           <Typography variant="h6" padding="10">
+                Κατηγορίες Μαθημάτων
+            </Typography> 
            <ul class="filter-list">
             {/* <li>
                 <input 
@@ -23,7 +52,7 @@ const Filter = () => {
                 <label for="c1">Επιλογή όλων</label>
             </li> */}
             {categoriesLi.map((category,index) => 
-                 <li onClick={() => clickCheck(index)}>
+                  <li onClick={() => clickCheck(index)}>
                     <input 
                         type="checkbox" 
                         name="c1" 
@@ -34,7 +63,14 @@ const Filter = () => {
                         >
                     </input>
                     <label for="c1">{category}</label>
+                    {/* <Checkbox
+                        checked={checks[index]}
+                        //onChange={() => clickCheck(index)}
+                        inputProps={{ 'aria-label': 'controlled' }}
+                        label="fasdf"
+                     /> */}
                  </li>
+                
             )}
            </ul>
         </div>

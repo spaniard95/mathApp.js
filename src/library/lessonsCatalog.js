@@ -3,7 +3,7 @@ const lessons = [
         number: 101,
         name: "Απειροστικος Λογιμος 1",
         category: [0],
-        grade: "",
+        grade: null,
     },
     {
         number: 109,
@@ -1101,7 +1101,7 @@ const lesson2 = [{
 const majors = [
     {
         title: "Θεωρητικών Μαθηματικών",
-        requirements: [14, 6, 5, 8, 4, 2, , ]
+        requirements: ["=14", 6, 5, 8, 4, 2, , ]
     },
     {
         title: "Εφαρμοσμένων Μαθηματικών",

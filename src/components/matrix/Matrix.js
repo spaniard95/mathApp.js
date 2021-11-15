@@ -3,8 +3,9 @@ import { groupByCategory } from "../../library";
 import { useSelector } from "react-redux";
 import { majors, categoriesLi } from "../../library";
 
+//replaced by mui table
 //chaos
-const MatrixOld = () => {
+const Matrix = () => {
   const catalog = useSelector((state) => state.catalog);
   const group = groupByCategory(catalog);
 
