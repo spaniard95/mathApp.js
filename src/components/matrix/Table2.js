@@ -16,14 +16,14 @@ function createData(categoryTitle, passed, limit1, limit2, limit3) {
   return { categoryTitle, passed, limit1, limit2, limit3};
 }
 
-const rows = ( lessons1 ) => {
-  const { getPassedLessonsByCateg } = getLessonsBy;  
+const rows = ( lessons ) => {
+  const { getPassedLessonsBySelectedCateg } = getLessonsBy;  
   
   return categoriesLi.map((categoryRow, index) => {
-    console.log(getPassedLessonsByCateg(lessons1, 0))
+   // console.log( categoryRow + getPassedLessonsByCateg(lessons, 0).length)
     return createData(
       categoryRow,
-      getPassedLessonsByCateg(lessons1, index).length,
+      getPassedLessonsBySelectedCateg(lessons, index)?.length || 0,
       majors[0].requirements[index],
       majors[1].requirements[index],
       majors[2].requirements[index],

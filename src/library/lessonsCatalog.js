@@ -9,7 +9,7 @@ const lessons = [
         number: 109,
         name: "Θεμέλια Μαθηματικής Ανάλυσης",
         category: [3, 5],  //test=5
-        selected: 1,
+        selected: 0,
         grade: null,
     },
     {
@@ -84,7 +84,7 @@ const lessons = [
         number: 252,
         name: "Διακριτά μαθηματικά",
         category: [2, 3],
-        selected: null,
+        selected: 0,
         grade: null,
     },
     {

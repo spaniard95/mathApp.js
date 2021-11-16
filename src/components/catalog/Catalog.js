@@ -1,6 +1,6 @@
 import Card from "../card";
 import "./catalog.css";
-import { Typography } from "@mui/material";
+import { Pagination, Typography } from "@mui/material";
 import { useFilterModel } from "../../models/filterModel";
 import useCatalogModel from "../../models/catalogModel/useCatalogModel";
 import { getLessonsBy } from "../../library";
@@ -13,12 +13,15 @@ const Catalog = () => {
     const filteredLessons = getLessonsByCateg(lessons, checkedCategs(checks));
     return (
         <div className="catalog-box">
-            <Typography variant="h6" gutterBottom component="div">
+            <Typography variant="h6" component="div">
                 {`Κατάλογος μαθημάτων (${filteredLessons.length})`}
             </Typography>
-            <select id="select1">
-                <option value="Υποχρεωτικό">Αριθμός Καταλόγου</option>
-            </select>
+            <div class="pagination">
+                <select id="select1">
+                    <option value="Υποχρεωτικό">Αριθμός Καταλόγου</option>
+                </select>
+                <Pagination sx={{ display: "inline-block" , float: "right"}} shape="rounded"/>            
+            </div>
             <list class="card-container">
                 {filteredLessons.map(lesson => 
                     <Card 

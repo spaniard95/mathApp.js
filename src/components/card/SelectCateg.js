@@ -1,6 +1,7 @@
+import { Chip } from "@mui/material";
 import "./selectCateg.css"; 
 
-const lessonsNums = ["Υποχρεωτικό", "ΠΚΕΜ", "ΠΚΘΜ", "ΚΘΜ", "ΚΕΜ", "ΔΔΜ", "ΔΦ", "ΔΟΕ"]
+const lessonsNums = ["Υποχρεωτικό", "ΠΚΘΜ", "ΠΚΕΜ", "ΚΘΜ", "ΚΕΜ", "ΔΔΜ", "ΔΦ", "ΔΟΕ"]
 
 const SelectCateg = ({num, category, selected, setCategoryChange}) => {
 
@@ -11,12 +12,15 @@ const SelectCateg = ({num, category, selected, setCategoryChange}) => {
                 :
                 category.map((categ, index) => {
                     return index === selected ? 
-                        <button 
-                            class={`selected-${categ}`}
-                            onClick={e => setCategoryChange(num, index)}>{lessonsNums[categ]}
-                        </button>
+                        // <button                         //selected
+                        //     class={`selected-${categ}`}
+                        //     onClick={e => setCategoryChange(num, index)}
+                        // >
+                        //     {lessonsNums[categ]}
+                        // </button>
+                        <Chip label={lessonsNums[categ]} size="small" sx={{ backgroundColor: "rgb(0, 145, 145)"}} color="primary" onClick={e => setCategoryChange(num, index)}/>
                         :
-                        <button onClick={e => setCategoryChange(num, index)}>{lessonsNums[categ]}</button>;
+                        <Chip label={lessonsNums[categ]} size="small" sx={{ color: "rgb(0, 145, 145)"}}  variant="outlined" onClick={e => setCategoryChange(num, index)}/>
                 })
             }
         </c>

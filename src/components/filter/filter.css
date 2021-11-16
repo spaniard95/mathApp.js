@@ -1,11 +1,18 @@
 .filter-box {
-    max-width: fit-content;
+    max-width: 350px;
+    min-width: 165px;
+    width: 10%;
     font-size: medium;
-    border: 2px solid;
+    /* border: 2px solid;
     border-radius: 10px;
-    border-color: rgb(175, 171, 175);
+    border-color: rgb(175, 171, 175); */
     margin-right: 30px;
     max-height: 300px;
+}
+
+.pagination {
+    padding: 10px;
+    
 }
 
 .filter-list {
@@ -22,7 +29,7 @@ li {
 }
 
 .filter-list > li:hover {
-    color: rgb(106, 165, 165);
+    color: rgb(91, 152, 163);
     cursor: pointer;
 }
 
