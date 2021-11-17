@@ -1,6 +1,6 @@
 import "./card.css";
 import SelectCateg from "./SelectCateg";
-import { Typography } from "@mui/material";
+import { TextField, Typography } from "@mui/material";
 import useCatalogModel from "../../models/catalogModel/useCatalogModel";
 
 
@@ -15,15 +15,27 @@ const Card = ({num, title, category, grade, selected}) => {
                     <b id="line"> </b>
                 </div>
             } */}
-            <input 
+            {/* <input 
                 type="number" 
                 id="grade" 
                 value={grade} 
                 min="5" max="10" 
                 onChange={e => setGrade(num, e.target.value)}>
-            </input> 
+            </input>  */}
+            <TextField
+                label="Βαθμός"
+                id="filled-size-small"
+                defaultValue=""
+                size="small"
+                sx={{
+                    float: "right",
+                    padding: 1,
+                    margin: 1.1,
+                    width: 130
+                }}
+            />
             <div id="double">
-            <Typography variant="h7" component="div">
+            <Typography variant="h7" component="div" paddingBottom={0.5}>
                 {title}
              </Typography>
                     <SelectCateg 

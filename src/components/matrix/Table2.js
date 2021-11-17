@@ -24,9 +24,9 @@ const rows = ( lessons ) => {
     return createData(
       categoryRow,
       getPassedLessonsBySelectedCateg(lessons, index)?.length || 0,
-      majors[0].requirements[index],
-      majors[1].requirements[index],
-      majors[2].requirements[index],
+      majors[0].requirementsStrings[index],
+      majors[1].requirementsStrings[index],
+      majors[2].requirementsStrings[index],
     )
   });
 };

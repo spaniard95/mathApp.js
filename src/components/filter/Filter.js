@@ -46,6 +46,7 @@ const Filter = () => {
                     width: '25%', 
                     maxWidth: 300, 
                     height: 300,
+                    align: "left", //doesnt work
                 }}
                 >
                 {checks.map((category, index) => {
@@ -73,7 +74,7 @@ const Filter = () => {
                                 dense
                                 disableRipple
                                 >
-                                <ListItemIcon>
+                                <ListItemIcon sx={{ minWidth: 0}}>
                                     <Checkbox
                                         edge="start"
                                         checked={category}

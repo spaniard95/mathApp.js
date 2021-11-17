@@ -13,14 +13,11 @@ const Catalog = () => {
     const filteredLessons = getLessonsByCateg(lessons, checkedCategs(checks));
     return (
         <div className="catalog-box">
-            <Typography variant="h6" component="div">
+            <Typography variant="h6" component="div" sx={{ marginBottom: 2}}>
                 {`Κατάλογος μαθημάτων (${filteredLessons.length})`}
             </Typography>
             <div class="pagination">
-                <select id="select1">
-                    <option value="Υποχρεωτικό">Αριθμός Καταλόγου</option>
-                </select>
-                <Pagination sx={{ display: "inline-block" , float: "right"}} shape="rounded"/>            
+                <Pagination sx={{ float: "right"}} shape="rounded" size="small" count={3}/>            
             </div>
             <list class="card-container">
                 {filteredLessons.map(lesson => 

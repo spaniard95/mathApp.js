@@ -1,12 +1,11 @@
 .results-matrix1 {
   display: table-cell;
-  margin-left: 30px;
-  width: 600px;
+  margin-left: 20px;
+  width:40%;
+  max-width: 600px;
+  min-width: 565px;
 }
 
-TableCell {
-  padding: 100px;
-}
 
 .table {
   /* display: grid;

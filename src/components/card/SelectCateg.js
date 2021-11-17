@@ -6,7 +6,7 @@ const lessonsNums = ["Υποχρεωτικό", "ΠΚΘΜ", "ΠΚΕΜ", "ΚΘΜ",
 const SelectCateg = ({num, category, selected, setCategoryChange}) => {
 
     return (
-        <c>
+        <c class="categ-container">
             {category.length == 1 ?
                 <a id="categ">{lessonsNums[category[0]] }</a>           // not double-category lessons
                 :

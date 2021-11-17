@@ -1,7 +1,7 @@
 .filter-box {
-    max-width: 350px;
-    min-width: 165px;
-    width: 10%;
+    max-width: 200px;
+    min-width: 175px;
+    width: 12%;
     font-size: medium;
     /* border: 2px solid;
     border-radius: 10px;
@@ -10,10 +10,7 @@
     max-height: 300px;
 }
 
-.pagination {
-    padding: 10px;
-    
-}
+
 
 .filter-list {
     list-style-type: none;

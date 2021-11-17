@@ -2,15 +2,25 @@
     display:table-cell;
     background-color: white;
     width: 40%;
-    min-width: 500px;
-    max-width: 550px;
+    width: 550px;
+    
     text-align:left;
-    max-height: 50px;
+    /* max-height: 50px; */
     font-family: arial, sans-serif;
    
     border: 2px solid;
     border-radius: 10px;
     border-color: rgb(175, 171, 175);
+}
+
+/* removes arrows from grade-input */
+input[type='number'] {
+    -moz-appearance:textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
 }
 
 .flex-card:hover {
@@ -19,14 +29,14 @@
 
 #num {
     float: left;
-    padding: 15px;
-    padding-top: 13px;
+    padding: 19px;
+    padding-top: 26px;
     margin-right: 5px;
 }
 
 #double {
     margin-left: 50px;
-    padding: 5px;
+    padding: 15px;
 }
 
 #grade {
@@ -34,12 +44,12 @@
     margin-right: 20px;
     margin-top: 11px;
     font-size: larger;
-    max-width: 75px;
+    width: 75px;
     text-align: center;
 
     border: 1px solid;
     border-radius: 3px;
-    border-color: rgb(21, 158, 55);
+    border-color: rgb(0, 145, 145);
     
 }
 
@@ -47,10 +57,11 @@
     border-color: red;
 }
 
-#grade::before {
+/* #grade::before {
     content: "Βαθμός: ";
-}
+} */
 
+/* not used */
 #line {
     float: right;
     height: 50px;
@@ -70,6 +81,8 @@
 #title {
     font-size: medium;
 }
+
+
 
 
 
