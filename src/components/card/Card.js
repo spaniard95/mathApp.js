@@ -25,13 +25,18 @@ const Card = ({num, title, category, grade, selected}) => {
             <TextField
                 label="Βαθμός"
                 id="filled-size-small"
-                defaultValue=""
                 size="small"
+                color="primary"
+                value={grade} 
+                error={ parseInt(grade)<5 }
+                onChange={e => setGrade(num, e.target.value)}
+                type="number"
                 sx={{
                     float: "right",
                     padding: 1,
                     margin: 1.1,
-                    width: 130
+                    width: 130,
+                    textAlign: "center"
                 }}
             />
             <div id="double">
