@@ -16,6 +16,7 @@
 /* removes arrows from grade-input */
 input[type='number'] {
     -moz-appearance:textfield;
+    text-align: center;
 }
 
 input::-webkit-outer-spin-button,
@@ -49,13 +50,10 @@ input::-webkit-inner-spin-button {
 
     border: 1px solid;
     border-radius: 3px;
-    border-color: rgb(0, 145, 145);
+    border-color: rgb(175, 175, 175);
     
 }
 
-#grade:invalid {
-    border-color: red;
-}
 
 /* #grade::before {
     content: "Βαθμός: ";
@@ -70,17 +68,6 @@ input::-webkit-inner-spin-button {
     background-color: rgb(20, 180, 6);
 }
 
-#select1 {
-   margin-bottom: 15px;
-}
-
-#input:focus {
-    background-color: aqua;
-}
-
-#title {
-    font-size: medium;
-}
 
 
 

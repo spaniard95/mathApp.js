@@ -1101,17 +1101,17 @@ const lesson2 = [{
 const majors = [
     {
         title: "Θεωρητικών Μαθηματικών",
-        requirementsStrings: ["=14", "6", "5", "8", "4", "2", "-", "-"]
+        requirementsStrings: [14 , 6, 5, 5, 4, 2]
     },
     {
         title: "Εφαρμοσμένων Μαθηματικών",
         requirements: [14, 6, 5, 8, 4, 2, 0, 0],
-        requirementsStrings: [14, 6, 5, 8, 4, 2, 0, 0]
+        requirementsStrings: [14, 6, 5, 8, 4, 2]
     },
     {
         title: "Θεωρητικών και Εφαρμοσμένων",
         requirements: [14, 6, 5, 8, 4, 2, 0, 0],
-        requirementsStrings: [14, 6, 5, 8, 4, 2, , ]
+        requirementsStrings: [14, 6, 5, 8, 4, 1]
     },
 ];
 

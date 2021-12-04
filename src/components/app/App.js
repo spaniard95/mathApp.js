@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import './App.css';
 import Catalog from "../catalog"
 import Filter from '../filter';
-import BasicTable from '../matrix';
+import TablesContainer from "../tablesContainer";
 import ModelProvider from './model-provider';
+import Accordion from '../accordionTables';
 
 function App() {
     
@@ -12,7 +13,7 @@ function App() {
       <div id="app">
         <Filter/>
         <Catalog/>
-        <BasicTable/>
+        <TablesContainer/>
       </div>
     </ModelProvider>
   );

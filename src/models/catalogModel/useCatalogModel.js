@@ -8,9 +8,9 @@ const useCatalogModel = () => {
     const handleCategoryChange = (num, categoryIndex) => {
         dispatch(categoryChange({num: num, selected: categoryIndex}))
     };
-
+    //if grade acceptable (5<=grade<=10) update catalog
     const handleGradeChange = (num, grade) => {  
-        if(grade<=10 && grade>=0|| grade==="") dispatch(gradeInput({num: num,grade: grade})); //if grade acceptable update catalog
+        if(grade<=10 && grade>=0 || grade==="") dispatch(gradeInput({num: num,grade: grade})); //if grade acceptable update catalog
 
     };
 
