@@ -10,6 +10,7 @@ import { Typography } from "@mui/material";
 import { majors, categoriesLi } from "../../library";
 import { getLessonsBy, finalGradeCalculator } from "../../library";
 import useCatalogModel from "../../models/catalogModel/useCatalogModel";
+import { useGradesModel } from "../../models/gradesModel";
 import { CellChip } from "../cellChip";
 import "./matrix.css";
 import { styled } from "@mui/styles";
@@ -18,14 +19,14 @@ function createData(categoryTitle, passed, limit1, limit2, limit3) {
   return { categoryTitle, passed, limit1, limit2, limit3 };
 }
 
-const rows = (lessons) => {
+const rows = (lessons, grades) => {
   const { getPassedLessonsBySelectedCateg } = getLessonsBy;
 
   return categoriesLi.map((categoryRow, index) => {
     // console.log( categoryRow + getPassedLessonsByCateg(lessons, 0).length)
     return createData(
       categoryRow,
-      getPassedLessonsBySelectedCateg(lessons, index)?.length || 0,
+      getPassedLessonsBySelectedCateg(lessons, grades, index)?.length || 0,
       majors[0].requirementsStrings[index],
       majors[1].requirementsStrings[index],
       majors[2].requirementsStrings[index]
@@ -45,11 +46,16 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 
 export default function BasicTable() {
   const { lessons } = useCatalogModel();
+  const { grades } = useGradesModel();
+
   const { getLessonsByGrade } = getLessonsBy;
 
-  const lessonsSum = getLessonsByGrade(lessons, 5).length; //returns array with all passed lessons
+  const lessonsSum = getLessonsByGrade(lessons, grades, 5).length; //returns array.length with all passed lessons
 
-  console.log(finalGradeCalculator(getLessonsByGrade(lessons, 5)));
+  console.log(
+    finalGradeCalculator(getLessonsByGrade(lessons, grades, 5), grades)
+  );
+
   return (
     <div class="results-matrix1">
       <Typography variant="h6" gutterBottom component="div">
@@ -84,7 +90,7 @@ export default function BasicTable() {
             </TableRow>
           </TableHead>
           <TableBody>
-            {rows(lessons).map((row, index) => (
+            {rows(lessons, grades).map((row, index) => (
               <StyledTableRow
                 key={row.name}
                 sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
