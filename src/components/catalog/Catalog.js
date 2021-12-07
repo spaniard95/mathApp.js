@@ -4,7 +4,7 @@ import { Pagination, Typography } from "@mui/material";
 import { useFilterModel } from "../../models/filterModel";
 import useCatalogModel from "../../models/catalogModel/useCatalogModel";
 import { getLessonsBy, groupByPages } from "../../library";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useGradesModel } from "../../models/gradesModel";
 
 const Catalog = () => {
@@ -17,10 +17,16 @@ const Catalog = () => {
 
   const { getLessonsByCateg } = getLessonsBy;
 
-  //we get the filtered by checks lessons
+  //we get the filtered by categ-checks lessons
   const filteredLessons = getLessonsByCateg(lessons, checkedCategs(checks));
   //we groupBy the lessons by page
   const perPageLessons = groupByPages(filteredLessons, 30); //30 lessons per page, can be customised
+
+  // if the number of pages is too much after a filterCheck go to the last page
+  useEffect(() => {
+    if (Object.keys(perPageLessons).length <= pageNum)
+      setPageNum(Object.keys(perPageLessons).length);
+  }, [perPageLessons]);
 
   return (
     <div className="catalog-box">

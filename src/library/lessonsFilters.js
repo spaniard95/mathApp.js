@@ -37,9 +37,18 @@ const getPassedLessonsByCateg = (lessons, grades, categ) => {
   return getLessonsByCateg(getLessonsByGrade(lessons, grades, 5), [categ]);
 };
 
+const getPassedLessonsById = (lessonsId, grades) => {
+  return lessonsId.filter((lessonId) => {
+    return typeof lessonId === "number"
+      ? grades[lessonId] >= 5
+      : grades[lessonId[0]] >= 5 || grades[lessonId[1]] >= 5;
+  });
+};
+
 export const getLessonsBy = {
   getLessonsByGrade,
   getLessonsByCateg,
   getPassedLessonsByCateg,
   getPassedLessonsBySelectedCateg,
+  getPassedLessonsById,
 };

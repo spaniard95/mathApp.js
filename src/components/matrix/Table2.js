@@ -27,16 +27,16 @@ const rows = (lessons, grades) => {
     return createData(
       categoryRow,
       getPassedLessonsBySelectedCateg(lessons, grades, index)?.length || 0,
-      majors[0].requirementsStrings[index],
-      majors[1].requirementsStrings[index],
-      majors[2].requirementsStrings[index]
+      majors[0].requirements[index],
+      majors[1].requirements[index],
+      majors[2].requirements[index]
     );
   });
 };
 
 const StyledTableRow = styled(TableRow)(({ theme }) => ({
   "&:nth-of-type(odd)": {
-    // backgroundColor: "rgb(153, 187, 187)",
+    //backgroundColor: "rgb(153, 187, 187)",
   },
   // hide last border
   "&:last-child td, &:last-child th": {
@@ -52,8 +52,9 @@ export default function BasicTable() {
 
   const lessonsSum = getLessonsByGrade(lessons, grades, 5).length; //returns array.length with all passed lessons
 
-  console.log(
-    finalGradeCalculator(getLessonsByGrade(lessons, grades, 5), grades)
+  const finalGrade = finalGradeCalculator(
+    getLessonsByGrade(lessons, grades, 5),
+    grades
   );
 
   return (
@@ -72,21 +73,39 @@ export default function BasicTable() {
               <TableCell></TableCell>
               <TableCell></TableCell>
               <TableCell></TableCell>
-              <TableCell padding={"none"} align="center">
+              <TableCell
+                padding={"none"}
+                align="center"
+                sx={{ fontWeight: "bold" }}
+              >
                 Κατευθύνσεις
               </TableCell>
               <TableCell></TableCell>
             </TableRow>
             <TableRow>
-              <TableCell padding={"1"} align="center">
+              <TableCell
+                padding={"0"}
+                align="center"
+                sx={{ fontWeight: "bold" }}
+              >
                 Κατηγορίες Μαθημάτων
               </TableCell>
-              <TableCell align="center">Επιτυχίες</TableCell>
-              <TableCell align="center">Θεωρητικών Μαθηματικών</TableCell>
-              <TableCell align="center" padding={"none"}>
+              <TableCell align="center" sx={{ fontWeight: "bold" }}>
+                Επιτυχίες
+              </TableCell>
+              <TableCell align="center" sx={{ fontWeight: "bold" }}>
+                Θεωρητικών Μαθηματικών
+              </TableCell>
+              <TableCell
+                align="center"
+                padding={"none"}
+                sx={{ fontWeight: "bold" }}
+              >
                 Εφαρμοσμένων Μαθηματικών
               </TableCell>
-              <TableCell align="center">Θεωρητικών και Εφαρμοσμένων</TableCell>
+              <TableCell align="center" sx={{ fontWeight: "bold" }}>
+                Θεωρητικών και Εφαρμοσμένων
+              </TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -95,11 +114,15 @@ export default function BasicTable() {
                 key={row.name}
                 sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
               >
-                <TableCell component="th" scope="row" align="center">
+                <TableCell
+                  component="th"
+                  scope="row"
+                  align="center"
+                  sx={{ fontWeight: "bold" }}
+                >
                   {row.categoryTitle}
                 </TableCell>
                 <TableCell align="center">{row.passed}</TableCell>
-
                 <CellChip
                   limit={row.limit1}
                   passed={row.passed}
@@ -118,11 +141,23 @@ export default function BasicTable() {
               </StyledTableRow>
             ))}
             <TableRow sx={{ backgroundColor: "white" }}>
-              <TableCell align="center">Σύνολο</TableCell>
-              <TableCell align="center">{lessonsSum}</TableCell>
+              <TableCell align="center" sx={{ fontWeight: "bold" }}>
+                Σύνολο
+              </TableCell>
+              <TableCell align="center" sx={{ fontWeight: "bold" }}>
+                {lessonsSum}
+              </TableCell>
               <CellChip limit={36} passed={lessonsSum} index={-1} />
               <CellChip limit={36} passed={lessonsSum} index={-1} />
               <CellChip limit={36} passed={lessonsSum} index={-1} />
+            </TableRow>
+            <TableRow>
+              <TableCell align="center" sx={{ fontWeight: "bold" }}>
+                Βαθμός
+              </TableCell>
+              <TableCell align="center" sx={{ fontWeight: "bold" }}>
+                {finalGrade.toFixed(2)}
+              </TableCell>
             </TableRow>
           </TableBody>
         </Table>

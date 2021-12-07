@@ -8,12 +8,11 @@ import {
   Typography,
 } from "@mui/material";
 import SmallTableRow from "./SmallTableRow";
-import didaktikiFirst from "../../library/eidikeuseis";
 
-const SmallTable = () => {
+const SmallTable = ({ arr1, arr2 }) => {
   return (
     <TableContainer>
-      <Table>
+      <Table size="small" aria-label="a dense table">
         <TableHead>
           <TableRow>
             <Chip label="Επιλογή 1" />
@@ -22,12 +21,11 @@ const SmallTable = () => {
             <TableCell>Απαιτούμενα μαθήματα</TableCell>
             <TableCell align="right">Σύνολο</TableCell>
           </TableRow>
-
-          <SmallTableRow arr={didaktikiFirst} />
+          <SmallTableRow arr={arr1} />
         </TableHead>
       </Table>
       {/* second table/second choice */}
-      <Table sx={{ mt: 5 }}>
+      <Table size="small" aria-label="a dense table" sx={{ mt: 2 }}>
         <TableHead>
           <TableRow sx={{ padding: 0 }}>
             <Chip label="Επιλογή 2" />
@@ -36,6 +34,7 @@ const SmallTable = () => {
             <TableCell>Απαιτούμενα μαθημάτα</TableCell>
             <TableCell align="right">Σύνολο</TableCell>
           </TableRow>
+          <SmallTableRow arr={arr2} />
         </TableHead>
       </Table>
     </TableContainer>
