@@ -78,7 +78,7 @@ const statistikiFirst = [
       856,
       859,
     ],
-    lessonsLimit: 5,
+    lessonsLimit: 4,
   },
   {
     firstString: "Συνολικά 9 μαθήματα από τα παραπάνω",

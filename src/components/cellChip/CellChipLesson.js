@@ -16,7 +16,7 @@ const CellChipLesson = ({ lessonNum, grade }) => {
       label={lessonNum[0] + " ή " + lessonNum[1]} //special case for lessons like 151 - 251
       color="success"
       size="small"
-      variant={!grade >= 5 ? "outlined" : "filled"}
+      variant={!(grade >= 5) ? "outlined" : "filled"}
       sx={{
         mr: "2px",
       }}

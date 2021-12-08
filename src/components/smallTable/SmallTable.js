@@ -11,7 +11,7 @@ import SmallTableRow from "./SmallTableRow";
 
 const SmallTable = ({ arr1, arr2 }) => {
   return (
-    <TableContainer>
+    <TableContainer sx>
       <Table size="small" aria-label="a dense table">
         <TableHead>
           <TableRow>

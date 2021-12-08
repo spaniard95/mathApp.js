@@ -144,9 +144,7 @@ export default function BasicTable() {
               <TableCell align="center" sx={{ fontWeight: "bold" }}>
                 Σύνολο
               </TableCell>
-              <TableCell align="center" sx={{ fontWeight: "bold" }}>
-                {lessonsSum}
-              </TableCell>
+              <TableCell align="center">{lessonsSum}</TableCell>
               <CellChip limit={36} passed={lessonsSum} index={-1} />
               <CellChip limit={36} passed={lessonsSum} index={-1} />
               <CellChip limit={36} passed={lessonsSum} index={-1} />

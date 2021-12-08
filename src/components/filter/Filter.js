@@ -21,6 +21,7 @@ const categoriesLi = [
   "ΔΔΜ",
   "ΔΦ",
   "ΔΟΕ",
+  "ΔΠΤ",
 ];
 
 //not used
@@ -114,7 +115,7 @@ const Filter = () => {
           );
         })}
       </List>
-      {/* <Typography variant="subtitle1" sx={{ marginTop: -2 }} align="left">
+      {/* <Typography variant="subtitle1" sx={{ marginTop: 0 }} align="left">
         Επιλογές μαθημάτων
       </Typography>
       <List
