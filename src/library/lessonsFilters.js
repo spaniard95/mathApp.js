@@ -8,7 +8,7 @@ const getLessonsByCateg = (lessons, categs) => {
     return false;
   });
 };
-//not used
+
 const groupByCategory = (array) => {
   return array.reduce((group, currentElem) => {
     const currentCateg = currentElem.selected
@@ -28,13 +28,26 @@ const getLessonsByGrade = (lessons, grades, gradeLimit) => {
   return lessons.filter((lesson) => grades[lesson.number] || 0 >= gradeLimit);
 };
 
-const getPassedLessonsBySelectedCateg = (lessons, grades, categ) => {
-  return groupByCategory(getLessonsByGrade(lessons, grades, 5))[categ];
+const getPassedLessonsBySelectedCateg = (lessons, grades, categId) => {
+  return groupByCategory(getLessonsByGrade(lessons, grades, 5))[categId];
 };
 
 //get a categories passed lessons, can be used with array.length to get the number of passed lessons
-const getPassedLessonsByCateg = (lessons, grades, categ) => {
-  return getLessonsByCateg(getLessonsByGrade(lessons, grades, 5), [categ]);
+const getPassedLessonsByCateg = (lessons, grades, categId) => {
+  return getLessonsByCateg(getLessonsByGrade(lessons, grades, 5), [categId]);
+};
+
+//it takes in account the "every ΠΚΘΜ and ΠΚΕΜ counts as KΘΜ ΚΕΜ"
+const getSelectedCategPassedNumber = (lessons, grades, categId) => {
+  let numb =
+    getPassedLessonsBySelectedCateg(lessons, grades, categId)?.length || 0;
+  if (categId == 3 || categId == 4) {
+    //if categ == ΚΘΜ-->3 || ΚΕΜ-->4 => add ΠΚΘΜ-->1, ΠΚΕΜ-->2
+    numb +=
+      getPassedLessonsBySelectedCateg(lessons, grades, categId - 2)?.length ||
+      0;
+  }
+  return numb;
 };
 
 const getPassedLessonsById = (lessonsId, grades) => {
@@ -51,4 +64,5 @@ export const getLessonsBy = {
   getPassedLessonsByCateg,
   getPassedLessonsBySelectedCateg,
   getPassedLessonsById,
+  getSelectedCategPassedNumber,
 };

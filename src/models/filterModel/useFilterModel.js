@@ -13,9 +13,10 @@ const useFilterModel = () => {
   };
 
   return {
-    clickCheck: (index) => dispatch(clicked(index)),
+    clickCheck: (filterIndex, checkIndex) =>
+      dispatch(clicked({ filterIndex, checkIndex })),
     checkAll: (index) => dispatch(checkAll(index)),
-    checks: useSelector((state) => state.filter.categoryF),
+    checks: useSelector((state) => state.filter),
     checkedCategs: (checks) => getCategByChecks(checks),
   };
 };

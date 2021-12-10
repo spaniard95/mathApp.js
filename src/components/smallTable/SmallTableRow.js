@@ -12,9 +12,12 @@ const SmallTableRow = ({ arr }) => {
   //special case when we have a "pass lesson1 or lesson2" statement
   //and we get an array as lessonNum
   const correctGrade = (lessonNum) => {
-    return typeof lessonNum === "number"
-      ? grades[lessonNum]
-      : Math.max(grades[lessonNum[0]], grades[lessonNum[1]]);
+    const grade =
+      typeof lessonNum === "number"
+        ? grades[lessonNum] || 0
+        : Math.max(grades[lessonNum[0]], grades[lessonNum[1]]) || 0;
+
+    return grade;
   };
   const toChipOrNot = (passed, limit) => {
     return passed >= limit ? (

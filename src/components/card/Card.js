@@ -1,9 +1,10 @@
 import "./card.css";
 import SelectCateg from "./SelectCateg";
-import { TextField, Typography } from "@mui/material";
+import { IconButton, TextField, Typography } from "@mui/material";
 import useCatalogModel from "../../models/catalogModel/useCatalogModel";
 import { styled } from "@mui/system";
 import { useGradesModel } from "../../models/gradesModel";
+import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
 
 //needs work
 const GradeTextField = styled(TextField)({
@@ -28,25 +29,35 @@ const Card = ({ num, title, category, grade = "", selected }) => {
   return (
     <li class="flex-card">
       <n id="num">{num}</n>
-      <GradeTextField
-        label="Βαθμός"
-        size="small"
-        color="primary"
-        value={grade || ""} //without || "" the component becomes unControlled
-        error={parseInt(grade) < 5}
-        onChange={(e) => {
-          setGrade2(num, e.target.value);
-        }}
-        type="number"
-        variant="outlined"
-        sx={{
-          float: "right",
-          padding: 1,
-          margin: 1.1,
-          width: 95,
-          textAlign: "center", //doesnt work
-        }}
-      />
+      <div class="line">
+        <IconButton
+          color="info"
+          aria-label="add an alarm"
+          variant="outlined"
+          sx={{}}
+        >
+          <BookmarkBorderIcon sx={{}} />
+        </IconButton>
+        <GradeTextField
+          label="Βαθμός"
+          size="small"
+          color="primary"
+          value={grade || ""} //without || "" the component becomes unControlled
+          error={parseInt(grade) < 5}
+          onChange={(e) => {
+            setGrade2(num, e.target.value);
+          }}
+          type="number"
+          variant="outlined"
+          sx={{
+            float: "right",
+            padding: 1,
+            margin: 1.1,
+            width: 95,
+            textAlign: "center", //doesnt work
+          }}
+        />
+      </div>
       <div id="double">
         <Typography variant="h7" component="div" paddingBottom={0.5}>
           {title}
