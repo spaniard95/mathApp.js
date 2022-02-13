@@ -25,7 +25,7 @@ const groupByCategory = (array) => {
 
 //get the lessons with grade equal and above gradeLimit
 const getLessonsByGrade = (lessons, grades, gradeLimit) => {
-  return lessons.filter((lesson) => grades[lesson.number] || 0 >= gradeLimit);
+  return lessons.filter((lesson) => grades[lesson.number] >= gradeLimit);
 };
 
 const getPassedLessonsBySelectedCateg = (lessons, grades, categId) => {

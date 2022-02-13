@@ -276,6 +276,7 @@ const lessons = [
     category: [3, 4],
     name: "Συνδυαστική",
     number: "151",
+    selected: 0,
   },
   {
     category: [7],
@@ -306,6 +307,7 @@ const lessons = [
     category: [2, 3],
     name: "Διακριτά Μαθηματικά",
     number: "252",
+    selected: 0,
   },
   {
     category: [6],
@@ -371,6 +373,7 @@ const lessons = [
     category: [3, 4],
     name: "Θεωρία Γραφημάτων και Εφαρμογές",
     number: "373",
+    selected: 0,
   },
   {
     category: [7],
@@ -391,11 +394,13 @@ const lessons = [
     category: [1, 2],
     name: "Μερικές Διαφορικές Εξισώσεις I",
     number: "411",
+    selected: 0,
   },
   {
     category: [3, 4],
     name: "Αυτόματα και Τυπικές Γλώσσες",
     number: "412",
+    selected: 0,
   },
   {
     category: [3],
@@ -436,6 +441,7 @@ const lessons = [
     category: [3, 4],
     name: "Υπολογιστική Άλγεβρα",
     number: "439",
+    selected: 0,
   },
   {
     category: [2],
@@ -506,6 +512,7 @@ const lessons = [
     category: [1, 2],
     name: "Μαθηματική Λογική",
     number: "513",
+    selected: 0,
   },
   {
     category: [3],
@@ -516,6 +523,7 @@ const lessons = [
     category: [3, 4],
     name: "Εισαγωγή στο Σχεδιασμό και Ανάλυση Αλγορίθμων",
     number: "518",
+    selected: 0,
   },
   {
     category: [1],
@@ -536,6 +544,7 @@ const lessons = [
     category: [3, 4],
     name: "Μαθηματική Κρυπτογραφία",
     number: "535",
+    selected: 0,
   },
   {
     category: [3],
@@ -606,6 +615,7 @@ const lessons = [
     category: [1, 2],
     name: "Ανάλυση Fourier και Ολοκλήρωμα Lebesgue",
     number: "605",
+    selected: 0,
   },
   {
     category: [3],
@@ -621,6 +631,7 @@ const lessons = [
     category: [3, 4],
     name: "Αναδρομικές Συναρτήσεις",
     number: "614",
+    selected: 0,
   },
   {
     category: [3],
@@ -631,6 +642,7 @@ const lessons = [
     category: [3, 4],
     name: "Θεωρία Προσέγγισης",
     number: "616",
+    selected: 0,
   },
   {
     category: [4],
@@ -641,6 +653,7 @@ const lessons = [
     category: [3, 4],
     name: "Υπολογιστική Πολυπλοκότητα",
     number: "618",
+    selected: 0,
   },
   {
     category: [7],
@@ -656,6 +669,7 @@ const lessons = [
     category: [3, 4],
     name: "Πεπερασμένα Σώματα και Κωδικοποίηση",
     number: "639",
+    selected: 0,
   },
   {
     category: [2],
@@ -681,6 +695,7 @@ const lessons = [
     category: [3, 4],
     name: "Μέθοδοι Εφαρμοσμένων Μαθηματικών",
     number: "658",
+    selected: 0,
   },
   {
     category: [4],
@@ -766,6 +781,7 @@ const lessons = [
     category: [1, 4],
     name: "Μερικές Διαφορικές Εξισώσεις II",
     number: "713",
+    selected: 0,
   },
   {
     category: [1],
@@ -776,11 +792,13 @@ const lessons = [
     category: [3, 4],
     name: "Μαθηματική Βιολογία",
     number: "715",
+    selected: 0,
   },
   {
     category: [3, 4],
     name: "Θεωρία Κατανομών",
     number: "718",
+    selected: 0,
   },
   {
     category: [1],
@@ -801,11 +819,13 @@ const lessons = [
     category: [3, 4],
     name: "Συνδυαστική Μερικώς Διατεταγμένων Συνόλων",
     number: "733",
+    selected: 0,
   },
   {
     category: [3, 4],
     name: "Αλγεβρική Συνδυαστική",
     number: "734",
+    selected: 0,
   },
   {
     category: [3],
@@ -826,6 +846,7 @@ const lessons = [
     category: [2, 3],
     name: "Δυναμικά Συστήματα",
     number: "739",
+    selected: 0,
   },
   {
     category: [4],
@@ -926,6 +947,7 @@ const lessons = [
     category: [3, 4],
     name: "Θεωρία Ελέγχου",
     number: "814",
+    selected: 0,
   },
   {
     category: [4],
@@ -996,6 +1018,7 @@ const lessons = [
     category: [2, 3],
     name: "Στοχαστικός Λογισμός",
     number: "856",
+    selected: 0,
   },
   {
     category: [4],

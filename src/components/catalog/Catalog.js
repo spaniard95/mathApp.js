@@ -12,13 +12,17 @@ const Catalog = () => {
 
   //accessing the slices of redux state
   const { checks, checkedCategs } = useFilterModel();
+  console.log(checks);
   const { lessons } = useCatalogModel();
   const { grades } = useGradesModel();
 
   const { getLessonsByCateg } = getLessonsBy;
 
   //we get the filtered by categ-checks lessons
-  const filteredLessons = getLessonsByCateg(lessons, checkedCategs(checks));
+  const filteredLessons = getLessonsByCateg(
+    lessons,
+    checkedCategs(checks[0].checks)
+  );
   //we groupBy the lessons by page
   const perPageLessons = groupByPages(filteredLessons, 30); //30 lessons per page, can be customised
 
@@ -50,6 +54,7 @@ const Catalog = () => {
             category={lesson.category}
             grade={grades[lesson.number]}
             selected={lesson.selected}
+            bookMarked={lesson.bookMarked}
           />
         ))}
       </list>

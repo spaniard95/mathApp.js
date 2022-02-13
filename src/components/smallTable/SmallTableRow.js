@@ -15,7 +15,7 @@ const SmallTableRow = ({ arr }) => {
     const grade =
       typeof lessonNum === "number"
         ? grades[lessonNum] || 0
-        : Math.max(grades[lessonNum[0]], grades[lessonNum[1]]) || 0;
+        : Math.max(grades[lessonNum[0]] || 0, grades[lessonNum[1] || 0]);
 
     return grade;
   };

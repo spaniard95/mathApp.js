@@ -5,6 +5,7 @@ import useCatalogModel from "../../models/catalogModel/useCatalogModel";
 import { styled } from "@mui/system";
 import { useGradesModel } from "../../models/gradesModel";
 import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
+import { Bookmark } from "@mui/icons-material";
 
 //needs work
 const GradeTextField = styled(TextField)({
@@ -22,8 +23,15 @@ const GradeTextField = styled(TextField)({
   },
 });
 
-const Card = ({ num, title, category, grade = "", selected }) => {
-  const { setCategoryChange, setGrade } = useCatalogModel();
+const Card = ({
+  num,
+  title,
+  category,
+  grade = "",
+  selected,
+  bookMarked = false,
+}) => {
+  const { setCategoryChange, setGrade, setBookMarked } = useCatalogModel();
   const { setGrade2 } = useGradesModel();
 
   return (
@@ -34,9 +42,10 @@ const Card = ({ num, title, category, grade = "", selected }) => {
           color="info"
           aria-label="add an alarm"
           variant="outlined"
-          sx={{}}
+          sx={{ mt: 2, mb: 2 }}
+          onClick={() => setBookMarked(num, !bookMarked)}
         >
-          <BookmarkBorderIcon sx={{}} />
+          {bookMarked ? <Bookmark /> : <BookmarkBorderIcon />}
         </IconButton>
         <GradeTextField
           label="Βαθμός"
